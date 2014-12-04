@@ -3,7 +3,7 @@ INCLUDES = -I../include
 LIBS = -L../lib -lmatrix
 CFLAGS = $(INCLUDES) -g
 
-EXECUTABLES = norm proj4
+EXECUTABLES = norm pca
 
 .PHONY: all clean
 
@@ -12,7 +12,7 @@ all: $(EXECUTABLES)
 norm: norm.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
-proj4: proj4.o
+pca: pca.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 		
 clean:

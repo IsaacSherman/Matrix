@@ -25,12 +25,11 @@ else break;
 string inFileTr = fileName+".tr", inFileTe = fileName+".te", outFileTr = (fileName+"_norm"+".tr"), outFileTe = (fileName+"_norm"+".te");
 
 
-Matrix A = readData(inFileTr.c_str(), nf+1), B = readData(inFileTe.c_str(), nf+1);
+Matrix A = readData(inFileTr.c_str(), nf+1);
 
-normalize(A, B, nf, 1);
+normalize(A, A, nf, 0);
 
 writeData(A, outFileTr.c_str());
-writeData(B, outFileTe.c_str());
 
 
 return 0;
